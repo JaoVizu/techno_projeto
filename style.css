@@ -20,6 +20,34 @@ body {
   padding: 0 80px;
 }
 
+/* HEADER */
+.header{
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;  
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.logo{ 
+  width: 80px;
+}
+
+.carrinho_menu::after{
+  content: '';
+  display: inline-block;
+  background: url('./assets/carrinho.svg') no-repeat center center;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.carrinho_menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 /* SELECIONAR MOEDAS */
 .selecionar_moeda {
   max-width: 900px;
@@ -108,11 +136,11 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translate3D(50px, 0, 0);
+    transform: translate3d(50px, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translate3D(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
   }
 }
 
@@ -163,6 +191,9 @@ body {
   background: #808080
 }
 
+.modal_btn.esgotado {
+  background: #808080;
+}
 
 /* AVALIACOES */
 .avaliacoes {
@@ -185,4 +216,39 @@ body {
 
 .avaliacao_usuario {
   font-weight: bold;
+}
+
+/* ALERTA */
+.alerta { 
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.alerta.ativo {
+  display: block;
+  animation: fadeInDown .3s forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translate3d(0, -30px, 0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0px,0);
+  }
+}
+
+.alerta_mensagem {
+  background: #fff;
+  display: inline-block;
+  padding: 20px 40px;
+  border: 2px solid black;
+  box-shadow: 0 3px 4px rgba(0,0,0,.1), 0 4px 10px rgba(0,0,0,.2);
 }
