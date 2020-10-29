@@ -19,7 +19,6 @@
       </div>
     </header>
 
-
     <div class="selecionar_moeda">
       <select name="moeda" v-model="moeda">
         <option 
@@ -52,7 +51,6 @@
           <span class="modal_preco">{{produto.preco | numeroPreco(moeda)}}</span>
           <h2 class="modal_titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
-          <p>{{produto.estoque}}</p>
           <button v-if="produto.estoque > 0" class="modal_btn" @click="adicionarItem">Adicionar Item</button>
           <button v-else class="modal_btn esgotado" disabled>Produto Esgotado</button>
         </div>
