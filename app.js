@@ -37,7 +37,7 @@ const vm = new Vue({
   },
   methods : {
     fetchProdutos(){
-      fetch('./api/produtos.json')
+      fetch('http://localhost:3333/produtos')
         .then(r => r.json())
         .then(r => this.produtos = r)
     },
